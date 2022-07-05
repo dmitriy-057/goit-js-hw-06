@@ -18,15 +18,13 @@ function onSubmitForm(event) {
   if (mail === "" || password === "") {
     alert("Все поля должны быть заполнены");
   } else {
-    console.log("email:", mail);
-    console.log("password:", password);
+    // console.log("email:", mail);
+    // console.log("password:", password);
+    const formData = {
+      mail: mail,
+      password: password,
+    };
+    console.log(formData);
   }
+  return formEl.reset;
 }
-
-// const formData = new FormData(event.currentTarget);
-// console.log(formData);
-
-// formData.forEach((value, name) => {
-//   console.log("onSubmitForm: name", name);
-//   console.log("onsubmitForm: value", value);
-// });
