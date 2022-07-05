@@ -8,6 +8,17 @@
 // 3 - при клике на decrement значение value -= 1
 // 4 -  при клике на increment значение value += 1
 
+const counterValue = {
+  value: 0,
+
+  increment() {
+    this.value += 1;
+  },
+  decrement() {
+    this.value -= 1;
+  },
+};
+
 const valueEl = document.querySelector("#value");
 console.log(valueEl);
 const decrementEl = document.querySelector('[data-action="decrement"]');
@@ -16,9 +27,13 @@ const incrementEl = document.querySelector('[data-action="increment"]');
 console.log(incrementEl);
 
 decrementEl.addEventListener("click", () => {
-  valueEl.textContent -= 1;
+  counterValue.decrement();
+  valueEl.textContent = counterValue.value;
+  // valueEl.textContent -= 1;
 });
 
 incrementEl.addEventListener("click", () => {
-  valueEl.textContent += 1;
+  counterValue.increment();
+  valueEl.textContent = counterValue.value;
+  // valueEl.textContent += 1;
 });
