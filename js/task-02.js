@@ -20,12 +20,15 @@ const ingredients = [
 // 4 - присваиваем класс <li>
 // 5 - добавляем  в li перебранный массив
 // 6 - добавляем li в ul
+
 const ingredientsEl = document.querySelector("#ingredients");
 console.log(ingredientsEl);
 
 const eachOfIngredients = ingredients.map((element) => {
   const itemIngredients = document.createElement("li");
   itemIngredients.classList.add("item");
-  itemIngredients.append(element);
-  ingredientsEl.appendChild(itemIngredients);
+  itemIngredients.textContent = element;
+
+  return itemIngredients;
 });
+ingredientsEl.append(...eachOfIngredients);
