@@ -18,7 +18,7 @@ const counterValue = {
     this.value -= 1;
   },
 };
-
+let counterValue = 0;
 const valueEl = document.querySelector("#value");
 console.log(valueEl);
 const decrementEl = document.querySelector('[data-action="decrement"]');
@@ -29,11 +29,9 @@ console.log(incrementEl);
 decrementEl.addEventListener("click", () => {
   counterValue.decrement();
   valueEl.textContent = counterValue.value;
-  // valueEl.textContent -= 1;
 });
 
 incrementEl.addEventListener("click", () => {
   counterValue.increment();
   valueEl.textContent = counterValue.value;
-  // valueEl.textContent += 1;
 });
